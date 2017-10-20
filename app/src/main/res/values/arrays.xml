@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="samples_list">
+        <item>Tabs</item>
+        <item>Text Input Layout</item>
+        <item>Selection controls</item>
+        <item>Pickers</item>
+        <item>Bottom Sheet</item>
+        <item>Bottom Navigation</item>
+    </string-array>
+    <string-array name="tabs_samples">
+        <item>Fixed Tabs</item>
+        <item>Scrollable Tabs</item>
+        <item>Icon &amp; text tabs</item>
+        <item>Custom icon &amp; text tabs</item>
+        <item>Custom icon &amp; text tabs w/indicator</item>
+    </string-array>
+</resources>
