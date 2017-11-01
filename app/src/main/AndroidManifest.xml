@@ -36,6 +36,9 @@
         <activity
             android:name=".activities.BottomNavigationActivity"
             android:label="Bottom Sheet"/>
+        <activity
+            android:name=".activities.FocusActivity"
+            android:label="Focus Sample"/>
     </application>
 
 </manifest>

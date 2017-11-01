@@ -60,6 +60,9 @@ public class MainActivity extends AppCompatActivity implements StringAdapter.Lis
             case 5:
                 intent = BottomNavigationActivity.getStartIntent(MainActivity.this);
                 break;
+            case 6:
+                intent = FocusActivity.getStartIntent(MainActivity.this);
+                break;
         }
         if (intent != null) {
             startActivity(intent);

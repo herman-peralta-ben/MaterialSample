@@ -7,6 +7,7 @@
         <item>Pickers</item>
         <item>Bottom Sheet</item>
         <item>Bottom Navigation</item>
+        <item>Focus</item>
     </string-array>
     <string-array name="tabs_samples">
         <item>Fixed Tabs</item>
