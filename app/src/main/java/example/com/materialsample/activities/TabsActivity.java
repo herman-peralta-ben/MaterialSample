@@ -32,11 +32,13 @@ import example.com.materialsample.adapters.StringAdapter;
 import example.com.materialsample.fragments.PageFragment;
 
 // TODO: ADD MOVE NEXT AND REMOVE
+
 /**
  * https://www.androidhive.info/2015/09/android-material-design-working-with-tabs/
  * https://stackoverflow.com/questions/33749792/changing-tablayout-icons-on-left-top-right-or-bottom-in-com-android-supportde
  * https://gist.github.com/Runly/75657c18c9f3f3eb8a1c9b6ae0c431cd
  * <p>
+ * https://medium.com/inloop/adventures-with-fragmentstatepageradapter-4f56a643f8e0
  * ** https://stackoverflow.com/questions/40480675/android-tab-layout-wrap-tab-indicator-width-with-respect-to-tab-title/44026386#44026386
  */
 public class TabsActivity extends AppCompatActivity {
@@ -83,8 +85,13 @@ public class TabsActivity extends AppCompatActivity {
     String[] tabs_samples;
 
     @Nullable
-    @BindView(R.id.next)
-    View buttonNext;
+    @BindView(R.id.nextPage)
+    View buttonNextPage;
+
+    @Nullable
+    @BindView(R.id.nextPage)
+    View buttonRemovePage;
+
     private String title;
     private PagePagerAdapter adapter;
 
@@ -96,18 +103,6 @@ public class TabsActivity extends AppCompatActivity {
         intent.putExtras(extras);
 
         return intent;
-    }
-
-    void onNextClicked() {
-        final int currentItem = viewPager.getCurrentItem();
-        if (currentItem != adapter.getCount() - 1 /*ONE_INT*/) {
-            Log.e("HERMAN", "NEXT ");
-            viewPager.setCurrentItem(currentItem + 1 /*ONE_INT*/);
-        } else {
-            // go to next activity
-            Intent intent = TabsActivity.getStartIntent(TabsActivity.this, TabsActivity.TYPE_SAMPLE_LIST, "Tab types");
-            startActivity(intent);
-        }
     }
 
     @Override
@@ -167,12 +162,36 @@ public class TabsActivity extends AppCompatActivity {
                 break;
         }
 
-        buttonNext.setOnClickListener(new View.OnClickListener() {
+        buttonNextPage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 onNextClicked();
             }
         });
+
+        buttonRemovePage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onRemovePageClicked();
+            }
+        });
+    }
+
+    void onNextClicked() {
+        final int currentItem = viewPager.getCurrentItem();
+        if (currentItem != adapter.getCount() - 1 /*ONE_INT*/) {
+            Log.e("HERMAN", "NEXT ");
+            viewPager.setCurrentItem(currentItem + 1 /*ONE_INT*/);
+        } else {
+            // go to next activity
+            Intent intent = TabsActivity.getStartIntent(TabsActivity.this, TabsActivity.TYPE_SAMPLE_LIST, "Tab types");
+            startActivity(intent);
+        }
+    }
+
+    void onRemovePageClicked() {
+        final int currentPage = viewPager.getCurrentItem();
+        adapter.removeItem(currentPage);
     }
 
     /**
