@@ -31,6 +31,7 @@ import example.com.materialsample.adapters.PagePagerAdapter;
 import example.com.materialsample.adapters.StringAdapter;
 import example.com.materialsample.fragments.PageFragment;
 
+// TODO: ADD MOVE NEXT AND REMOVE
 /**
  * https://www.androidhive.info/2015/09/android-material-design-working-with-tabs/
  * https://stackoverflow.com/questions/33749792/changing-tablayout-icons-on-left-top-right-or-bottom-in-com-android-supportde

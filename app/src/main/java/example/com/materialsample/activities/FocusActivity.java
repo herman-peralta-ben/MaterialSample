@@ -7,13 +7,20 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnCheckedChanged;
 import butterknife.OnFocusChange;
 import example.com.materialsample.R;
 
 public class FocusActivity extends AppCompatActivity {
+
+    @BindView(R.id.rb1) RadioButton rb1;
+    @BindView(R.id.radioGroup) RadioGroup radioGroup;
 
     public static Intent getStartIntent(@NonNull Context from) {
         Intent intent = new Intent(from, FocusActivity.class);
@@ -66,6 +73,11 @@ public class FocusActivity extends AppCompatActivity {
     @OnFocusChange(R.id.rb3)
     public void onRadioFocus3(boolean hasFocus) {
         log("rb3 focus " + hasFocus);
+    }
+
+    @OnCheckedChanged(R.id.rb1)
+    public void onCheckedRadio1() {
+        radioGroup.requestFocus();
     }
 
     private void log(String msg) {
