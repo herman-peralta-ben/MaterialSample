@@ -345,7 +345,7 @@ public class TabsActivity extends AppCompatActivity {
         String title;
         for (int i = 0, tt = 0; i < pageCount; i++) {
             title = tabs_titles[tt];
-            adapter.addFragment(PageFragment.newInstance(title), title);
+            adapter.addItem(PageFragment.newInstance(title), title);
 
             if (++tt >= tabs_titles.length) {
                 tt = 0;
