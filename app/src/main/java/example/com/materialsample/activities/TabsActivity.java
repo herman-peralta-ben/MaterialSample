@@ -89,7 +89,7 @@ public class TabsActivity extends AppCompatActivity {
     View buttonNextPage;
 
     @Nullable
-    @BindView(R.id.nextPage)
+    @BindView(R.id.removePage)
     View buttonRemovePage;
 
     private String title;
