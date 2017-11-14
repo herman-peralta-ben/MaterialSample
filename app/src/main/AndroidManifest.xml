@@ -39,6 +39,9 @@
         <activity
             android:name=".activities.FocusActivity"
             android:label="Focus Sample"/>
+        <activity
+            android:name=".activities.DragViewActivity"
+            android:label="Drag and Drop Sample"/>
     </application>
 
 </manifest>
