@@ -10,6 +10,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -20,18 +21,26 @@ import butterknife.ButterKnife;
 import example.com.materialsample.R;
 import example.com.materialsample.listeners.DragAndDropWindowTouchListener;
 import example.com.materialsample.utils.Constants;
+import example.com.materialsample.utils.ImageUtils;
 import example.com.materialsample.utils.ViewUtils;
 
 // http://www.singhajit.com/android-draggable-view/
 public class DragViewActivity extends AppCompatActivity {
 
-    @BindView(R.id.draggable_view) View draggableView;
-    @BindView(R.id.drop_area_0) View dropArea0;
-    @BindView(R.id.drop_area_1) View dropArea1;
-    @BindView(R.id.drop_area_2) View dropArea2;
-    @BindView(R.id.drop_area_3) View dropArea3;
-    @BindView(R.id.drop_area_4) View dropArea4;
-    @BindView(R.id.drop_area_5) View dropArea5;
+    @BindView(R.id.draggable_view)
+    ImageView draggableView;
+    @BindView(R.id.drop_area_0)
+    View dropArea0;
+    @BindView(R.id.drop_area_1)
+    View dropArea1;
+    @BindView(R.id.drop_area_2)
+    View dropArea2;
+    @BindView(R.id.drop_area_3)
+    View dropArea3;
+    @BindView(R.id.drop_area_4)
+    View dropArea4;
+    @BindView(R.id.drop_area_5)
+    View dropArea5;
 
     List<View> viewWindows;
 
@@ -54,6 +63,7 @@ public class DragViewActivity extends AppCompatActivity {
         super.onWindowFocusChanged(hasFocus);
 
         configDragAndDropListener();
+        draggableView.setImageBitmap(ImageUtils.maskBitmap(this, R.drawable.bg_aurora, R.drawable.msk_jigsaw1));
     }
 
     private void configDragAndDropListener() {

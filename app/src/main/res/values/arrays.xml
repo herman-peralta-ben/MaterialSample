@@ -9,6 +9,7 @@
         <item>Bottom Navigation</item>
         <item>Focus</item>
         <item>Drag and drop</item>
+        <item>Image Sample</item>
     </string-array>
     <string-array name="tabs_samples">
         <item>Fixed Tabs</item>

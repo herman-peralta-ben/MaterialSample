@@ -66,6 +66,9 @@ public class MainActivity extends AppCompatActivity implements StringAdapter.Lis
             case 7:
                 intent = DragViewActivity.getStartIntent(MainActivity.this);
                 break;
+            case 8:
+                intent = ImageSampleActivity.getStartIntent(MainActivity.this);
+                break;
 
         }
         if (intent != null) {
